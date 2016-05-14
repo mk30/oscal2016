@@ -15,13 +15,11 @@ controls: true
 
 #why?
 
-
 > myth of "few good programs for linux"
 
 > don't get caught doing computer work!
 
 > command line tools give you superpowers (even if you're "not a programmer")
-
 
 --
 
@@ -61,15 +59,24 @@ man pages
 ###key features
 
 * `convert` - convert one file type to another; does not overwrite
+
+> `convert cat.png cat.jpg`
+
 * `resize` - resize one or many files based on a variety of options
+
+> `convert cat.png -resize 500 smallcat.png`
+> `convert cat.png -resize 50% smallcat.png`
+> `convert cat.png -resize x500 smallcat.png`
+
 * `identify` - dimensions of an image
+
+> `identify cat.png`
+
 * batch operations
 * effects: rotate, implode, etc.
 
 huge variety of options. explore documentation for more info
 than you'd ever want.
-
-[](add example construction here)
 
 --
 
@@ -86,7 +93,7 @@ use whichever one your package manager has.
 * trim videos
 * convert between many many file types
 
-[](add example construction here)
+> `ffmpeg -i video.mp4 video.avi`
 
 --
 
@@ -101,7 +108,11 @@ use whichever one your package manager has.
 * man page has fun examples: search 'chime'
 * works on .wav, not .mp3 (but mplayer does mp3 to wav)
 
-[](add example construction here)
+`rec sample.wav`
+`sox a.wav b.wav ab.wav`
+`sox -m music.wav voice.wav fullsong.wav`
+
+(add rec for x amount of time, trim example)
 
 --
 
@@ -154,10 +165,6 @@ git log | grep ^Author: | sed -r 's/^Author: //; s/ <[^>]+>//' | sort | uniq -c 
 use:
 /home/marina/dev/cyberwizard/site/cyberwizardinstitute.github.io
 
-[](eg: avconv input.mkv | 
-eg: youtube-dl 'https://www.youtube.com/watch?v=PFGa1JeTI8A'
-| avconv -i pipe:0 pipe:1 | )
-
 --
 
 #scripts
@@ -172,10 +179,6 @@ scripts can be inline or saved in files
 
 > moving photos to website server
 [](insert actual script here)
-
-> automating your duck feeder
-
-> organizing photos
 
 --
 
@@ -222,12 +225,13 @@ it's turtles all the way down.
 
 #further learning 
 
+* http://cyber.wizard.institute
 * inspiration for this talk: http://www.pgbovine.net/scripting.htm 
 * https://www.linux.com/learn/how-resize-rename-sort-and-proof-photos-command-line 
-* installing node & npm
-    * specific to ubuntu: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
-    * pro-tip for ubuntu: https://www.digitalocean.com/community/questions/ubuntu-repo-nodejs-require-symlink-to-node-to-use-forever
-    * pro-tip for all npm users: https://docs.npmjs.com/getting-started/fixing-npm-permissions
+* https://github.com/tldr-pages/tldr/blob/master/pages/common/ffmpeg.md
+* http://www.linuxandlife.com/2012/07/some-small-tricks-with-ffmpeg.html
+* http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs
+* http://www.thegeekstuff.com/2009/05/sound-exchange-sox-15-examples-to-manipulate-audio-files/
 
 --
 
@@ -241,3 +245,12 @@ it's turtles all the way down.
 ###_the linux command line_ by william shotts
 * full text: http://linuxcommand.org/tlcl.php
 * chapter on scripts: http://linuxcommand.org/lc3_writing_shell_scripts.php
+
+--
+
+#further learning: node and npm
+
+* installing node & npm
+    * specific to ubuntu: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
+    * pro-tip for ubuntu: https://www.digitalocean.com/community/questions/ubuntu-repo-nodejs-require-symlink-to-node-to-use-forever
+    * pro-tip for all npm users: https://docs.npmjs.com/getting-started/fixing-npm-permissions
