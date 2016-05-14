@@ -18,7 +18,10 @@ controls: true
 
 > myth of "few good programs for linux"
 
+> don't get caught doing computer work!
+
 > command line tools give you superpowers (even if you're "not a programmer")
+
 
 --
 
@@ -28,7 +31,7 @@ controls: true
 
 > `youtube-dl 'https://www.youtube.com/watch?v=PFGa1JeTI8A'`
 
-###pro-tips
+###tips
 
 * get the latest version from github
 * use ' ' around url
@@ -66,6 +69,8 @@ man pages
 huge variety of options. explore documentation for more info
 than you'd ever want.
 
+[](add example construction here)
+
 --
 
 #ffmpeg/libav-tools
@@ -81,6 +86,8 @@ use whichever one your package manager has.
 * trim videos
 * convert between many many file types
 
+[](add example construction here)
+
 --
 
 #sox
@@ -94,19 +101,39 @@ use whichever one your package manager has.
 * man page has fun examples: search 'chime'
 * works on .wav, not .mp3 (but mplayer does mp3 to wav)
 
+[](add example construction here)
+
+--
+
+#byzanz
+
+##record your desktop to a gif
+
+* available on apt (check your distro)
+* default recording length is 10 sec. can change with **-d**
+* takes over your prompt, so run it in bg
+
+![](testcrop.gif)
+
+[](fix gif - currently too big)
+
 --
 
 #gifsicle
 
 ##make your own gifs
 
-###key features
-
 * combine multiple images into a gif
 * specify order, speed, size, and more
 * "explode" gifs into constituent frames
 
+![](test2crop.gif)
+
+[](gif is too big)
+[](maybe put in bird example?)
+
 --
+
 
 #flite and espeak
 
@@ -122,7 +149,10 @@ both are on apt and both take input from standard in
 
 #chain programs with pipes
 
-> **examples will be inserted here**
+git log | grep ^Author: | sed -r 's/^Author: //; s/ <[^>]+>//' | sort | uniq -c | sort -nr
+
+use:
+/home/marina/dev/cyberwizard/site/cyberwizardinstitute.github.io
 
 [](eg: avconv input.mkv | 
 eg: youtube-dl 'https://www.youtube.com/watch?v=PFGa1JeTI8A'
@@ -130,9 +160,28 @@ eg: youtube-dl 'https://www.youtube.com/watch?v=PFGa1JeTI8A'
 
 --
 
+#scripts
+
+##"wait a minute, i bet i can script this"
+
+computers are good & fast at some kinds of work 
+
+scripts can be inline or saved in files
+
+###examples
+
+> moving photos to website server
+[](insert actual script here)
+
+> automating your duck feeder
+
+> organizing photos
+
+--
+
 #search strategy
 
-##looking for small command line tools vs large gui programs
+##"wait a minute, i bet there's a command line tool for this"
 
 > "linux command line image resize" => convert
 
@@ -157,6 +206,17 @@ to install and run these programs, you must install node.js and npm
 > airpaste
 
 > tslide
+
+[](add sample constructions for the above. add airpaste
+recipient code)
+
+--
+
+###to conclude:
+command line tools are powerful, but addiction is possible.
+it's turtles all the way down.
+
+##![](xkcd.png)
 
 --
 
