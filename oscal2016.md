@@ -167,6 +167,22 @@ both are on apt and both take input from standard in
 
 --
 
+# combine programs
+
+download only audio from a youtube video:
+
+`youtube-dl --extract-audio --audio-format wav 'https://www.youtube.com/watch?v=PFGa1JeTI8A'`
+
+rename the file: `mv somelongyoutubename.wav song.wav`
+
+cut the first 15 seconds: `sox song.wav trimmedsong.wav 15`
+
+test whether you trimmed enough: `mplayer trimmedsong.wav`
+
+convert to mp3: `avconv -i trimmedsong.wav trimmedsong.mp3`
+
+--
+
 #chain programs with pipes
 
 
