@@ -167,7 +167,8 @@ pre {
   }
 
   img {
-    width: 100%;
+    height: auto;
+    width: auto;
   }
 
   h1 {
@@ -406,21 +407,39 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </div>
   <div class="slide hidden" id="slide-5">
     <section class="slide-content"><h1 id="imagemagick">imagemagick</h1>
-<h2 id="suite-of-powerful-image-manipulation-tools">suite of powerful image manipulation tools</h2>
-<h3 id="key-features">key features</h3>
 <ul>
 <li><code>convert</code> - convert one file type to another; does not overwrite</li>
+</ul>
+<blockquote>
+<p><code>convert cat.png cat.jpg</code></p>
+</blockquote>
+<ul>
 <li><code>resize</code> - resize one or many files based on a variety of options</li>
+</ul>
+<blockquote>
+<p><code>convert cat.png -resize 500 smallcat.png</code></p>
+<p><code>convert cat.png -resize 50% smallcat.png</code></p>
+<p><code>convert cat.png -resize x500 smallcat.png</code></p>
+</blockquote>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-6">
+    <section class="slide-content"><h1 id="imagemagick-part-2">imagemagick part 2</h1>
+<ul>
 <li><code>identify</code> - dimensions of an image</li>
+</ul>
+<blockquote>
+<p><code>identify cat.png</code></p>
+</blockquote>
+<ul>
 <li>batch operations</li>
 <li>effects: rotate, implode, etc.</li>
 </ul>
 <p>huge variety of options. explore documentation for more info
 than you&#39;d ever want.</p>
-<p><a href="add example construction here"></a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-6">
+  <div class="slide hidden" id="slide-7">
     <section class="slide-content"><h1 id="ffmpeg-libav-tools">ffmpeg/libav-tools</h1>
 <h2 id="video-manipulation-tools">video manipulation tools</h2>
 <p>libav is a fork of ffmpeg.
@@ -431,23 +450,32 @@ use whichever one your package manager has.</p>
 <li>trim videos</li>
 <li>convert between many many file types</li>
 </ul>
-<p><a href="add example construction here"></a></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-7">
-    <section class="slide-content"><h1 id="sox">sox</h1>
-<h2 id="audio-file-manipulation-tool">audio file manipulation tool</h2>
-<h3 id="key-features">key features</h3>
-<ul>
-<li>rec</li>
-<li>trim, repeat, combine audio</li>
-<li>man page has fun examples: search &#39;chime&#39;</li>
-<li>works on .wav, not .mp3 (but mplayer does mp3 to wav)</li>
-</ul>
-<p><a href="add example construction here"></a></p>
+<blockquote>
+<p><code>ffmpeg -i video.mp4 video.avi</code></p>
+</blockquote>
 </section>
   </div>
   <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h1 id="sox">sox</h1>
+<h2 id="audio-file-manipulation-tool">audio file manipulation tool</h2>
+<p>rec</p>
+<p>trim, split files, repeat, combine audio</p>
+<p>silence: add silence, trim at silence</p>
+<p>works on .wav, not .mp3 (but mplayer does mp3 to wav)</p>
+<p>man page has fun examples: search &#39;chime&#39;</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h1 id="sox-examples">sox: examples</h1>
+<p>record to file: <code>rec sample.wav</code></p>
+<p>concatenate audio: <code>sox a.wav b.wav ab.wav</code></p>
+<p>superimpose audio: <code>sox -m music.wav voice.wav fullsong.wav</code></p>
+<p>record for 30sec: <code>rec interview.wav trim 0 30</code></p>
+<p>basic trim syntax: <code>sox input.wav output.wav trim &lt;start&gt; &lt;duration&gt;</code></p>
+<p>remove first ten seconds: <code>sox song.wav trimmedsong.wav 10</code></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
     <section class="slide-content"><h1 id="byzanz">byzanz</h1>
 <h2 id="record-your-desktop-to-a-gif">record your desktop to a gif</h2>
 <ul>
@@ -455,11 +483,10 @@ use whichever one your package manager has.</p>
 <li>default recording length is 10 sec. can change with <strong>-d</strong></li>
 <li>takes over your prompt, so run it in bg</li>
 </ul>
-<p><img src="testcrop.gif" alt=""></p>
-<p><a href="fix gif - currently too big"></a></p>
+<p><img src="testcropsm.gif" alt=""></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-9">
+  <div class="slide hidden" id="slide-11">
     <section class="slide-content"><h1 id="gifsicle">gifsicle</h1>
 <h2 id="make-your-own-gifs">make your own gifs</h2>
 <ul>
@@ -467,12 +494,10 @@ use whichever one your package manager has.</p>
 <li>specify order, speed, size, and more</li>
 <li>&quot;explode&quot; gifs into constituent frames</li>
 </ul>
-<p><img src="test2crop.gif" alt=""></p>
-<p><a href="gif is too big"></a>
-<a href="maybe put in bird example?"></a></p>
+<p><img src="test2cropsm.gif" alt=""></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-10">
+  <div class="slide hidden" id="slide-12">
     <section class="slide-content"><h1 id="flite-and-espeak">flite and espeak</h1>
 <h2 id="text-to-speech">text to speech</h2>
 <p>both are on apt and both take input from standard in</p>
@@ -482,31 +507,24 @@ use whichever one your package manager has.</p>
 </blockquote>
 </section>
   </div>
-  <div class="slide hidden" id="slide-11">
+  <div class="slide hidden" id="slide-13">
     <section class="slide-content"><h1 id="chain-programs-with-pipes">chain programs with pipes</h1>
-<blockquote>
-<p><strong>examples will be inserted here</strong></p>
-</blockquote>
-<p><a href="eg: avconv input.mkv | 
-eg: youtube-dl &#39;https://www.youtube.com/watch?v=PFGa1JeTI8A&#39;
-| avconv -i pipe:0 pipe:1 |"></a></p>
+<h3 id="example-who-makes-the-most-commits-to-a-repository-">example: who makes the most commits to a repository?</h3>
+<p>git log | grep ^Author: | sed -r &#39;s/^Author: //; s/ &lt;[^&gt;]+&gt;//&#39; | sort | uniq -c | sort -nr</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-12">
+  <div class="slide hidden" id="slide-14">
     <section class="slide-content"><h1 id="scripts">scripts</h1>
 <h2 id="-wait-a-minute-i-bet-i-can-script-this-">&quot;wait a minute, i bet i can script this&quot;</h2>
 <p>computers are good &amp; fast at some kinds of work </p>
 <p>scripts can be inline or saved in files</p>
-<h3 id="examples">examples</h3>
+<h3 id="example">example</h3>
 <blockquote>
-<p>moving photos to website server
-<a href="insert actual script here"></a></p>
-<p>automating your duck feeder</p>
-<p>organizing photos</p>
+<p>generate medium &amp; thumbnail size photos for website</p>
 </blockquote>
 </section>
   </div>
-  <div class="slide hidden" id="slide-13">
+  <div class="slide hidden" id="slide-15">
     <section class="slide-content"><h1 id="search-strategy">search strategy</h1>
 <h2 id="-wait-a-minute-i-bet-there-s-a-command-line-tool-for-this-">&quot;wait a minute, i bet there&#39;s a command line tool for this&quot;</h2>
 <blockquote>
@@ -517,42 +535,41 @@ eg: youtube-dl &#39;https://www.youtube.com/watch?v=PFGa1JeTI8A&#39;
 </blockquote>
 </section>
   </div>
-  <div class="slide hidden" id="slide-14">
+  <div class="slide hidden" id="slide-16">
     <section class="slide-content"><h1 id="command-line-tools-on-npm">command line tools on npm</h1>
 <p>to install and run these programs, you must install node.js and npm</p>
 <h3 id="examples-">examples:</h3>
+<p>torrent-mount: <code>torrent-mount &#39;magnet:?xt=urn:btih:ba1e...&#39;</code></p>
+<p>airpaste: share with a peer on the same network</p>
 <blockquote>
-<p>web-torrent</p>
-<p>torrent-mount</p>
-<p>airpaste</p>
-<p>tslide</p>
+<p>send a file: <code>airpaste &lt; movie.avi</code></p>
+<p>receive a file: <code>airpaste &gt; movie.avi</code></p>
 </blockquote>
-<p><a href="add sample constructions for the above. add airpaste
-recipient code"></a></p>
+<p>tslide: slideshow from markdown file</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-15">
+  <div class="slide hidden" id="slide-17">
     <section class="slide-content"><h3 id="to-conclude-">to conclude:</h3>
 <p>command line tools are powerful, but addiction is possible.
 it&#39;s turtles all the way down.</p>
 <h2 id="-xkcd-png-"><img src="xkcd.png" alt=""></h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-16">
+  <div class="slide hidden" id="slide-18">
     <section class="slide-content"><h1 id="further-learning">further learning</h1>
 <ul>
+<li><a href="http://cyber.wizard.institute">http://cyber.wizard.institute</a></li>
 <li>inspiration for this talk: <a href="http://www.pgbovine.net/scripting.htm">http://www.pgbovine.net/scripting.htm</a> </li>
 <li><a href="https://www.linux.com/learn/how-resize-rename-sort-and-proof-photos-command-line">https://www.linux.com/learn/how-resize-rename-sort-and-proof-photos-command-line</a> </li>
-<li>installing node &amp; npm<ul>
-<li>specific to ubuntu: <a href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server">https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server</a></li>
-<li>pro-tip for ubuntu: <a href="https://www.digitalocean.com/community/questions/ubuntu-repo-nodejs-require-symlink-to-node-to-use-forever">https://www.digitalocean.com/community/questions/ubuntu-repo-nodejs-require-symlink-to-node-to-use-forever</a></li>
-<li>pro-tip for all npm users: <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">https://docs.npmjs.com/getting-started/fixing-npm-permissions</a></li>
-</ul>
-</li>
+<li><a href="https://github.com/tldr-pages/tldr/blob/master/pages/common/ffmpeg.md">https://github.com/tldr-pages/tldr/blob/master/pages/common/ffmpeg.md</a></li>
+<li><a href="http://www.linuxandlife.com/2012/07/some-small-tricks-with-ffmpeg.html">http://www.linuxandlife.com/2012/07/some-small-tricks-with-ffmpeg.html</a></li>
+<li><a href="http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs">http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/05/sound-exchange-sox-15-examples-to-manipulate-audio-files/">http://www.thegeekstuff.com/2009/05/sound-exchange-sox-15-examples-to-manipulate-audio-files/</a></li>
+<li><a href="http://digitalcardboard.com/blog/2009/08/25/the-sox-of-silence/">sox and silence</a></li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-17">
+  <div class="slide hidden" id="slide-19">
     <section class="slide-content"><h1 id="further-learning-unix-and-bash">further learning: unix and bash</h1>
 <h3 id="intro-to-unix-bash">intro to unix &amp; bash</h3>
 <ul>
@@ -566,7 +583,19 @@ it&#39;s turtles all the way down.</p>
 </ul>
 </section>
   </div>
-  <div class="slide hidden author-slide" id="slide-18">
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h1 id="further-learning-node-and-npm">further learning: node and npm</h1>
+<ul>
+<li>installing node &amp; npm<ul>
+<li>specific to ubuntu: <a href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server">https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server</a></li>
+<li>pro-tip for ubuntu: <a href="https://www.digitalocean.com/community/questions/ubuntu-repo-nodejs-require-symlink-to-node-to-use-forever">https://www.digitalocean.com/community/questions/ubuntu-repo-nodejs-require-symlink-to-node-to-use-forever</a></li>
+<li>pro-tip for all npm users: <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">https://docs.npmjs.com/getting-started/fixing-npm-permissions</a></li>
+</ul>
+</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden author-slide" id="slide-21">
     <section class="slide-content"><div class="author">
   <h1 class="name">Marina Kukso</h1>
     <h3 class="twitter">

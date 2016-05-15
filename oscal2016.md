@@ -54,10 +54,6 @@ man pages
 
 #imagemagick
 
-##suite of powerful image manipulation tools
-
-###key features
-
 * `convert` - convert one file type to another; does not overwrite
 
 > `convert cat.png cat.jpg`
@@ -65,8 +61,14 @@ man pages
 * `resize` - resize one or many files based on a variety of options
 
 > `convert cat.png -resize 500 smallcat.png`
+
 > `convert cat.png -resize 50% smallcat.png`
+
 > `convert cat.png -resize x500 smallcat.png`
+
+---
+
+#imagemagick part 2
 
 * `identify` - dimensions of an image
 
@@ -101,18 +103,31 @@ use whichever one your package manager has.
 
 ##audio file manipulation tool
 
-###key features
+rec
 
-* rec
-* trim, repeat, combine audio
-* man page has fun examples: search 'chime'
-* works on .wav, not .mp3 (but mplayer does mp3 to wav)
+trim, split files, repeat, combine audio
 
-`rec sample.wav`
-`sox a.wav b.wav ab.wav`
-`sox -m music.wav voice.wav fullsong.wav`
+silence: add silence, trim at silence
 
-(add rec for x amount of time, trim example)
+works on .wav, not .mp3 (but mplayer does mp3 to wav)
+
+man page has fun examples: search 'chime'
+
+--
+
+#sox: examples
+
+record to file: `rec sample.wav`
+
+concatenate audio: `sox a.wav b.wav ab.wav`
+
+superimpose audio: `sox -m music.wav voice.wav fullsong.wav`
+
+record for 30sec: `rec interview.wav trim 0 30`
+
+basic trim syntax: `sox input.wav output.wav trim <start> <duration>`
+
+remove first ten seconds: `sox song.wav trimmedsong.wav 10`
 
 --
 
@@ -124,9 +139,7 @@ use whichever one your package manager has.
 * default recording length is 10 sec. can change with **-d**
 * takes over your prompt, so run it in bg
 
-![](testcrop.gif)
-
-[](fix gif - currently too big)
+![](testcropsm.gif)
 
 --
 
@@ -138,13 +151,9 @@ use whichever one your package manager has.
 * specify order, speed, size, and more
 * "explode" gifs into constituent frames
 
-![](test2crop.gif)
-
-[](gif is too big)
-[](maybe put in bird example?)
+![](test2cropsm.gif)
 
 --
-
 
 #flite and espeak
 
@@ -160,10 +169,10 @@ both are on apt and both take input from standard in
 
 #chain programs with pipes
 
-git log | grep ^Author: | sed -r 's/^Author: //; s/ <[^>]+>//' | sort | uniq -c | sort -nr
 
-use:
-/home/marina/dev/cyberwizard/site/cyberwizardinstitute.github.io
+###example: who makes the most commits to a repository?
+
+git log | grep ^Author: | sed -r 's/^Author: //; s/ <[^>]+>//' | sort | uniq -c | sort -nr
 
 --
 
@@ -175,10 +184,9 @@ computers are good & fast at some kinds of work
 
 scripts can be inline or saved in files
 
-###examples
+###example
 
-> moving photos to website server
-[](insert actual script here)
+> generate medium & thumbnail size photos for website
 
 --
 
@@ -202,16 +210,15 @@ to install and run these programs, you must install node.js and npm
 
 ###examples:
 
-> web-torrent
+torrent-mount: `torrent-mount 'magnet:?xt=urn:btih:ba1e...'`
 
-> torrent-mount
+airpaste: share with a peer on the same network
 
-> airpaste
+> send a file: `airpaste < movie.avi`
 
-> tslide
+> receive a file: `airpaste > movie.avi`
 
-[](add sample constructions for the above. add airpaste
-recipient code)
+tslide: slideshow from markdown file
 
 --
 
@@ -232,6 +239,7 @@ it's turtles all the way down.
 * http://www.linuxandlife.com/2012/07/some-small-tricks-with-ffmpeg.html
 * http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs
 * http://www.thegeekstuff.com/2009/05/sound-exchange-sox-15-examples-to-manipulate-audio-files/
+* [sox and silence](http://digitalcardboard.com/blog/2009/08/25/the-sox-of-silence/)
 
 --
 
